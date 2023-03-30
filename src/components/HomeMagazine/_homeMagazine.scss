@@ -1,0 +1,32 @@
+@import '@/assets/scss/variables';
+
+.homeMagazine {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 50px;
+
+  &__title {
+    font-size: 50px;
+    line-height: 40px;
+    color: $base-color;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    padding: 0 100px 0 0;
+  }
+
+  &__descText {
+    color: $base-color;
+    font-size: 25px;
+    line-height: 27px;
+  }
+
+  &__descUrl {
+    padding-top: 50px;
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
