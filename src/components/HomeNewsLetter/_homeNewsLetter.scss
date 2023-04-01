@@ -1,0 +1,129 @@
+@import '@/assets/scss/variables';
+
+.homeNewsLetter {
+  position: relative;
+  width: 100%;
+  background: $base-color;
+  height: fit-content;
+
+  &__imgWrapper {
+    display: flex;
+    margin-left: auto;
+    width: 100%;
+    height: fit-content;
+    max-width: 50%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scaleX(-1);
+  }
+
+  &__infoBlockWrapper {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  &__title {
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  &__text {
+    color: white;
+    max-width: 30%;
+    padding-bottom: 70px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__mailLabel {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    width: 50%;
+    align-items: start;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+  }
+
+  &__mailInput {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    color: white;
+
+    &::placeholder {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      font-size: 20px;
+    }
+
+    &:-internal-autofill-selected {
+      -webkit-box-shadow: 0 0 0 30px $base-color inset !important;
+      -webkit-text-fill-color: #ffffffbd !important;
+      background-color: transparent !important;
+    }
+  }
+
+  &__submitWrapper {
+    padding-bottom: 10px;
+  }
+
+  &__submit {
+    position: relative;
+    left: 50%;
+    white-space: nowrap;
+    padding: 10px;
+  }
+
+  &__checkboxInput {
+    background-color: transparent;
+    border: 1px solid #9a3030;
+
+    padding: 2px;
+    cursor: pointer;
+  }
+
+  &__checkboxLabel {
+    color: white;
+  }
+}
+
+input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  /* остальные стили рамки */
+}
+
+input[type='checkbox'] + label:before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+input[type='checkbox']:checked + label:before {
+  background-color: #4000ff;
+}

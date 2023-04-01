@@ -3,7 +3,7 @@
   .homeVision__wrapper
     h3.homeVision__title {{title}}
     span.homeVision__text {{text}}
-    btn.homeVision__btn {{btnText}}
+    button.homeVision__btn {{btnText}}
 </template>
 
 <script>

@@ -8,8 +8,9 @@
       .homePage__projects.container
         TitleBlock(:title='title' :text='projectText' :linkText='linkText')
         BbProjects(:projects='projects')
-  TitleBlock(:title='title' :text='projectText' :linkText='linkText')
-
+  HomeMagazine(:cardInfo='magazineItems')
+  HomeNewsLetter
+  BbFooter 
 </template>
 
 <script>
@@ -19,13 +20,22 @@ import HomeBanner from '@/components/HomeBanner/HomeBanner.vue';
 import HomeVision from '@/components/HomeVision/HomeVision.vue';
 import BbProjects from '@/components/BbProjects/BbProjects.vue';
 import TitleBlock from '@/components/TitleBlock/TitleBlock.vue';
+import HomeMagazine from '@/components/HomeMagazine/HomeMagazine.vue';
+import HomeNewsLetter from '@/components/HomeNewsLetter/HomeNewsLetter.vue';
+import BbFooter from '@/components/BbFooter/BbFooter.vue';
 import projectOne from '@/assets/img/projectOne.jpg';
 import projectTwo from '@/assets/img/projectTwo.jpg';
 import projectThree from '@/assets/img/projectThree.jpg';
+import magazineOne from '@/assets/img/magazineOne.jpg';
+import magazineTwo from '@/assets/img/magazineTwo.jpg';
+import magazineThree from '@/assets/img/magazineThree.jpg';
+import magazineFour from '@/assets/img/magazineFour.jpg';
+import magazineFive from '@/assets/img/magazineFive.jpg';
+
 
 export default {
   name: 'BbHomePage',
-  components: { BbHeader, HomeBanner, HomeVision, BbProjects,TitleBlock },
+  components: { BbHeader, HomeBanner, HomeVision, BbProjects, TitleBlock, HomeMagazine, HomeNewsLetter, BbFooter },
   setup() {
     const projects = ref([
       {
@@ -55,7 +65,40 @@ export default {
     );
     const title = ref('Projecte');
     const linkText = ref('ZUR ÜBERSICHT');
-
+    const magazineItems = ref([
+      {
+        id: 1,
+        title: 'Aenean commodo ligula eget dolor.',
+        text: 'Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes.',
+        img: magazineOne
+      },
+      {
+        id: 2,
+        title: 'Aenean commodo ligula eget dolor.',
+        text: 'Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes.',
+        img: magazineTwo
+      },
+      {
+        id: 3,
+        title: 'Aenean commodo ligula eget dolor.',
+        text: 'Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes.',
+        img: magazineThree
+      },
+      {
+        id: 4,
+        title: 'Aenean commodo ligula eget dolor.',
+        text: 'Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes.',
+        img: magazineFour
+      },
+      {
+        id: 5,
+        title: 'Aenean commodo ligula eget dolor.',
+        text: 'Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes.',
+        img: magazineFive
+      },
+   
+    ]);
+    
     return {
       projects,
       projectOne,
@@ -64,6 +107,12 @@ export default {
       projectText,
       title,
       linkText,
+      magazineItems,
+      magazineOne,
+      magazineTwo,
+      magazineThree,
+      magazineFour,
+      magazineFive,
     };
   },
 };
