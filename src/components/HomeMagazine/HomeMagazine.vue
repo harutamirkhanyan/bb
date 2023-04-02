@@ -7,7 +7,7 @@
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 5 } }"
       :hovered="{ scale: 1 }"
-      :delay="300")
+      :delay="100")
         img.homeMagazine__img(:src='magazineTwo' alt='alt' loading='lazy')
       .homeMagazine__descriptionBlock
         .homeMagazine__textBlock
@@ -20,7 +20,7 @@
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
-      :delay="300")
+      :delay="100")
           img.homeMagazine__img(:src='magazineOne' alt='alt' loading='lazy')
         .homeMagazine__descriptionBlock
           .homeMagazine__textBlock
@@ -32,7 +32,7 @@
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
-      :delay="700")
+      :delay="100")
           img.homeMagazine__img(:src='magazineThree' alt='alt' loading='lazy')
         .homeMagazine__descriptionBlock
           .homeMagazine__textBlock
@@ -45,7 +45,7 @@
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
-      :delay="700")
+      :delay="100")
         img.homeMagazine__img(:src='magazineFour' alt='alt' loading='lazy')
       .homeMagazine__descriptionBlock
         .homeMagazine__textBlock
@@ -57,7 +57,7 @@
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
-      :delay="700")
+      :delay="100")
         img.homeMagazine__img(:src='magazineFive' alt='alt' loading='lazy')
       .homeMagazine__descriptionBlock
         .homeMagazine__textBlock

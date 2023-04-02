@@ -1,7 +1,6 @@
 <template lang="pug">
-.homeBannerBG.container
-  .homeBannerBG__img
-  .homeBanner
+.homeBanner
+  .homeBanner__wrapper
     .homeBanner__titleBlock
       h1.homeBanner__title(v-html='title')
       span.homeBanner__description(v-html='description')
@@ -11,7 +10,7 @@
         div.homeBanner__ingo
           p.homeBanner__name
             span Sinn
-            img.homeBanner__img(:src='logo' loading='lazy' alt='logo')
+            img.homeBanner__logoImg(:src='logo' loading='lazy' alt='logo')
           span Sinnlichkeit
 </template>
 

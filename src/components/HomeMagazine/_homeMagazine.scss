@@ -47,12 +47,16 @@
       align-items: center;
 
       @include response(phone) {
-        max-width: 70%;
+        max-width: 100%;
       }
     }
 
     &--two {
       max-width: 70%;
+      
+      @include response(phone) {
+        max-width: 100%;
+      }
     }
 
     &--three {
@@ -63,7 +67,7 @@
       }
 
       @include response(phone) {
-        max-width: 70%;
+        max-width: 100%;
       }
     }
 
@@ -72,14 +76,14 @@
       padding: 0 50px 0 0;
 
       @include response(phone) {
-        max-width: 70%;
+        max-width: 100%;
         padding: 0;
       }
     }
 
     &--five {
       @include response(phone) {
-        max-width: 70%;
+        max-width: 100%;
       }
     }
   }

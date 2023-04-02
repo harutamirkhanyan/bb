@@ -20,7 +20,7 @@ footer.footer
             a.footer__linksItem() Newsletter
             a.footer__linksItem() Karriere
       .footer__copyright
-        .footer__copyrightItem © 2022 BHB Unternehmensgruppe 
+        .footer__copyrightItem © 2023 BHB Unternehmensgruppe 
         .footer__copyrightItem Datenschutz
         .footer__copyrightItem Impressum
 </template>

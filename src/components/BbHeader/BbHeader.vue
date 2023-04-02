@@ -7,21 +7,29 @@
   .header__Wrapper
     .header__top
       .header__info
-        span.header__contact +49 89 64 19 280
-        a.header__contact info@bhb-bayern.de
-      .header__logo
-        img.header__img(:src='logo' loading='lazy' alt='logo')
+        a.header__contact(href='tel:+49 89 64 19 280') +49 89 64 19 280
+        a.header__contact(href='mailto:info@bhb-bayern.de') info@bhb-bayern.de
+      .header__logoWrapper
+        img.header__logo(:src='logo' loading='lazy' alt='logo')
       .header__socialMedia
-        a.header__contact() Facebook
-        a.header__contact() Instagram
+        a.header__logoWrapper.header__logoWrapper--mini(href='info@bhb-bayern.de')
+          img.header__logo(:src='facebook' loading='lazy' alt='facebook')
+        a.header__logoWrapper.header__logoWrapper--mini(href='info@bhb-bayern.de') 
+          img.header__logo(:src='instagram' loading='lazy' alt='instagram')
     ul.header__menu
       li.header__item(v-for="item in navItem" :key="item.id")
         a.header__link(href='javascript:void(0)') {{item.text}}
+    a.header__burger(href='javascript:void(0)')
+      img.header__logo(:src='burger' loading='lazy' alt='burgerLogo')
 </template>
 
 <script>
 import { ref } from 'vue';
 import logo from '@/assets/svgs/bbLogo.svg';
+import facebook from '@/assets/svgs/bbfacebook.svg';
+import instagram from '@/assets/svgs/bbinstagram.svg';
+import burger from '@/assets/svgs/burger.svg';
+
 export default {
   name: 'BbHeader',
   setup() {
@@ -35,6 +43,9 @@ export default {
     return {
       logo,
       navItem,
+      facebook,
+      instagram,
+      burger
     };
   },
 };

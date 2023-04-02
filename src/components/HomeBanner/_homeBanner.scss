@@ -1,9 +1,9 @@
 @import '@/assets/scss/variables';
 @import '@/assets/scss/mixin';
 
-.homeBannerBG {
+.homeBanner {
   position: relative;
-  height: 1100px;
+  height: 850px;
   border-right: 200px solid $base-color;
   border-top: 210px solid $base-color;
 
@@ -20,13 +20,11 @@
     transform: scaleX(-1);
   }
 
-  @include response(tablet) {
-    border-right: 50px solid $base-color;
-    border-top: 100px solid $base-color;
+  &__wrapper{
+    padding: 0 0 0 50px;
   }
-}
 
-.homeBanner {
+
   &__titleBlock {
     position: absolute;
     top: -180px;
@@ -62,6 +60,7 @@
     color: white;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    top: -150px;
     right: -120px;
     transform: rotate(180deg);
     letter-spacing: 4px;
@@ -82,8 +81,13 @@
     }
   }
 
-  &__img {
+  &__logoImg {
     width: 80px;
     height: auto;
+  }
+
+  @include response(tablet) {
+    border-right: 50px solid $base-color;
+    border-top: 100px solid $base-color;
   }
 }
