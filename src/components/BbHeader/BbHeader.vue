@@ -1,5 +1,9 @@
 <template lang="pug">
-.header.container
+.header.container( v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :variants="{ custom: { scale: 0 } }"
+    :delay="2000")
   .header__Wrapper
     .header__top
       .header__info

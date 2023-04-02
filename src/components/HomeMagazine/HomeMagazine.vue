@@ -3,7 +3,11 @@
   TitleBlock(title='title' text='projectText' linkText='linkText')
   .homeMagazine__wrapper
     .homeMagazine__card.homeMagazine__card--one
-      .homeMagazine__imgWrapper
+      .homeMagazine__imgWrapper(  v-motion-slide-visible-left
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :variants="{ custom: { scale: 5 } }"
+      :hovered="{ scale: 1 }"
+      :delay="300")
         img.homeMagazine__img(:src='magazineTwo' alt='alt' loading='lazy')
       .homeMagazine__descriptionBlock
         .homeMagazine__textBlock
@@ -12,7 +16,11 @@
         img.homeMagazine__arrow(src='@/assets/svgs/arrowMagazine.svg' loading='lazy' alt='arrow')
     .homeMagazine__cardWrapper
       .homeMagazine__card.homeMagazine__card--two
-        .homeMagazine__imgWrapper
+        .homeMagazine__imgWrapperr(  v-motion-slide-visible-right
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :variants="{ custom: { scale: 2 } }"
+      :hovered="{ scale: 1 }"
+      :delay="300")
           img.homeMagazine__img(:src='magazineOne' alt='alt' loading='lazy')
         .homeMagazine__descriptionBlock
           .homeMagazine__textBlock
@@ -20,7 +28,11 @@
             span.homeMagazine__cardText {{text}}
           img.homeMagazine__arrow(src='@/assets/svgs/arrowMagazine.svg' loading='lazy' alt='arrow')
       .homeMagazine__card.homeMagazine__card--three
-        .homeMagazine__imgWrapper
+        .homeMagazine__imgWrapper(v-motion-slide-visible-right
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :variants="{ custom: { scale: 2 } }"
+      :hovered="{ scale: 1 }"
+      :delay="700")
           img.homeMagazine__img(:src='magazineThree' alt='alt' loading='lazy')
         .homeMagazine__descriptionBlock
           .homeMagazine__textBlock
@@ -29,7 +41,11 @@
           img.homeMagazine__arrow(src='@/assets/svgs/arrowMagazine.svg' loading='lazy' alt='arrow')
   .homeMagazine__wrapper.homeMagazine__wrapper--two
     .homeMagazine__card.homeMagazine__card--four
-      .homeMagazine__imgWrapper
+      .homeMagazine__imgWrapper(  v-motion-slide-visible-right
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :variants="{ custom: { scale: 2 } }"
+      :hovered="{ scale: 1 }"
+      :delay="700")
         img.homeMagazine__img(:src='magazineFour' alt='alt' loading='lazy')
       .homeMagazine__descriptionBlock
         .homeMagazine__textBlock
@@ -37,7 +53,11 @@
           span.homeMagazine__cardText {{text}}
         img.homeMagazine__arrow(src='@/assets/svgs/arrowMagazine.svg' loading='lazy' alt='arrow')
     .homeMagazine__card.homeMagazine__card--five
-      .homeMagazine__imgWrapper
+      .homeMagazine__imgWrapper(  v-motion-slide-visible-left
+      :enter="{ opacity: 1, y: 0, scale: 1 }"
+      :variants="{ custom: { scale: 2 } }"
+      :hovered="{ scale: 1 }"
+      :delay="700")
         img.homeMagazine__img(:src='magazineFive' alt='alt' loading='lazy')
       .homeMagazine__descriptionBlock
         .homeMagazine__textBlock

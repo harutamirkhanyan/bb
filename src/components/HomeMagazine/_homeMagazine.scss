@@ -1,4 +1,5 @@
 @import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
 
 .homeMagazine {
   &__wrapper {
@@ -9,6 +10,15 @@
     &--two {
       align-items: start;
     }
+
+    @include response(tablet) {
+      padding: 25px 0;
+    }
+
+    @include response(phone) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__cardWrapper {
@@ -16,6 +26,16 @@
     display: flex;
     flex-direction: column;
     gap: 400px;
+
+    @include response(tablet) {
+      gap: 100px;
+    }
+
+    @include response(phone) {
+      gap: 20px;
+      padding: 0 0 0 0;
+      align-items: center;
+    }
   }
 
   &__card {
@@ -25,19 +45,42 @@
     &--one {
       max-width: 50%;
       align-items: center;
+
+      @include response(phone) {
+        max-width: 70%;
+      }
     }
 
     &--two {
-      max-width: 90%;
+      max-width: 70%;
     }
 
     &--three {
       max-width: 70%;
+
+      @include response(tablet) {
+        max-width: 80%;
+      }
+
+      @include response(phone) {
+        max-width: 70%;
+      }
     }
 
     &--four {
       max-width: 50%;
       padding: 0 50px 0 0;
+
+      @include response(phone) {
+        max-width: 70%;
+        padding: 0;
+      }
+    }
+
+    &--five {
+      @include response(phone) {
+        max-width: 70%;
+      }
     }
   }
 
@@ -45,6 +88,7 @@
     width: 100%;
     height: fit-content;
     max-width: 800px;
+    will-change: transform;
   }
 
   &__img {
@@ -55,6 +99,16 @@
 
   &__descriptionBlock {
     display: flex;
+
+    @include response(phone) {
+      gap: 20px;
+    }
+  }
+
+  &__textBlock {
+    @include response(phone) {
+      padding: 0 15px;
+    }
   }
 
   &__cardTitle {
@@ -62,6 +116,10 @@
     color: $base-color;
     line-height: 35px;
     padding: 25px 0;
+
+    @include response(tablet) {
+      padding: 15px 0;
+    }
   }
 
   &__cardText {

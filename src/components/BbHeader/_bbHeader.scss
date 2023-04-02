@@ -1,35 +1,48 @@
-@import "@/assets/scss/variables";
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
 
 .header {
   width: 100%;
   padding: 50px 0 0;
   margin: 0;
-  
 
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 50px;
   }
 
   &__info {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
+    min-width: 30%;
+
+    @include response(tablet) {
+      flex-wrap: wrap;
+    }
   }
 
   &__socialMedia {
     display: flex;
+    justify-content: flex-end;
+    text-align: right;
     gap: 15px;
+    min-width: 30%;
+
+    @include response(tablet) {
+      flex-wrap: wrap;
+    }
   }
 
   &__contact {
+    width: 100%;
     color: $base-color;
   }
 
   &__logo {
-    margin-right: 100px;
     width: 100%;
     height: fit-content;
     max-width: 200px;
@@ -50,6 +63,10 @@
     justify-content: center;
     gap: 30px;
     padding: 50px 0;
+
+    @include response(tablet) {
+      display: none;
+    }
   }
 
   &__item {

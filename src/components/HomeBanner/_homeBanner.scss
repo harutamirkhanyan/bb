@@ -1,4 +1,5 @@
 @import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
 
 .homeBannerBG {
   position: relative;
@@ -18,6 +19,11 @@
     background-size: cover;
     transform: scaleX(-1);
   }
+
+  @include response(tablet) {
+    border-right: 50px solid $base-color;
+    border-top: 100px solid $base-color;
+  }
 }
 
 .homeBanner {
@@ -29,12 +35,20 @@
     align-items: flex-start;
     width: 100%;
     padding: 0 50px 0 0;
+
+    @include response(tablet) {
+      top: -100px;
+    }
   }
 
   &__title {
     font-size: 100px;
     color: white;
     font-weight: 700;
+
+    @include response(phone) {
+      font-size: 30px;
+    }
   }
 
   &__description {
@@ -51,6 +65,10 @@
     right: -120px;
     transform: rotate(180deg);
     letter-spacing: 4px;
+
+    @include response(tablet) {
+      right: -30px;
+    }
   }
 
   &__bottomBlock {
@@ -58,6 +76,10 @@
     bottom: 50px;
     right: -80px;
     text-align: right;
+
+    @include response(tablet) {
+      right: -30px;
+    }
   }
 
   &__img {
