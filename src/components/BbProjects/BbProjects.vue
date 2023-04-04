@@ -4,17 +4,16 @@ ul.projects
     .projects__imgWrapper
       img.projects__img(:src='item.img' alt='alt' loading='lazy' v-motion-slide-visible-top
       :enter="{ opacity: 1, y: 0, scale: 1 }"
-      :variants="{ custom: { scale: 2 } }"
-      :hovered="{ scale: 1 }"
+      :variants="{ custom: { scale: 1 } }"
       :delay="100")  
     .projects__content(v-motion-pop-visible
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
       :delay="100")
-      span.projects__name {{item.name}}
+      span.projects__geo {{item.geo}}
       h3.projects__title {{item.title}}
-      span.projects__url {{item.url}}
+      span.projects__url {{item.more}}
 </template>
 
 <script>
