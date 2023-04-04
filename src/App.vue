@@ -1,6 +1,7 @@
 <template lang="pug">
 #main
-  BbHomePage
+  router-view 
+
 </template>
 
 <script>
