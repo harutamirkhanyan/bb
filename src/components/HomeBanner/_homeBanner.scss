@@ -1,8 +1,9 @@
 @import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
 
-.homeBannerBG {
+.homeBanner {
   position: relative;
-  height: 1100px;
+  height: 850px;
   border-right: 200px solid $base-color;
   border-top: 210px solid $base-color;
 
@@ -18,9 +19,11 @@
     background-size: cover;
     transform: scaleX(-1);
   }
-}
 
-.homeBanner {
+  &__wrapper {
+    padding: 0 0 0 50px;
+  }
+
   &__titleBlock {
     position: absolute;
     top: -180px;
@@ -29,17 +32,37 @@
     align-items: flex-start;
     width: 100%;
     padding: 0 50px 0 0;
+    gap: 35px; 
+
+    @include response(tablet) {
+      top: -100px;
+      flex-direction: column;
+    }
+
+    @include response(phone) {
+      top: -75px;
+    }
   }
 
   &__title {
-    font-size: 100px;
+    max-width: 305px;
+    font-size: 110px;
     color: white;
     font-weight: 700;
+    word-wrap: break-word;
+
+    @include response(tablet) {
+      font-size: 60px;
+    }
+
+    @include response(phone) {
+      font-size: 30px;
+    }
   }
 
   &__description {
-    padding-top: 25px;
-    font-size: 15px;
+    padding: 25px 0;
+    font-size: 20px;
     color: white;
   }
 
@@ -48,9 +71,18 @@
     color: white;
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    top: -150px;
     right: -120px;
     transform: rotate(180deg);
     letter-spacing: 4px;
+    text-align: center;
+
+    @include response(tablet) {
+      right: -60px;
+      top: -50px;
+      height: 350px;
+      word-wrap: break-word;
+    }
   }
 
   &__bottomBlock {
@@ -58,10 +90,34 @@
     bottom: 50px;
     right: -80px;
     text-align: right;
+
+    @include response(tablet) {
+      right: 0;
+    }
   }
 
-  &__img {
+  &__titleBottom{
+    font-size: 100px;
+    color: white;
+    font-weight: 700;
+
+    @include response(tablet) {
+      font-size: 60px;
+    }
+
+    @include response(phone) {
+      font-size: 30px;
+    }
+  }
+
+  &__logoImg {
     width: 80px;
     height: auto;
+  }
+
+  @include response(tablet) {
+    border-right: 70px solid $base-color;
+    border-top: 100px solid $base-color;
+    height: 500px;
   }
 }

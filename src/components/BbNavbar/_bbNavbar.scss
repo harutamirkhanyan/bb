@@ -1,0 +1,24 @@
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
+
+.navbar {
+  &__menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 0;
+
+    @include response(tablet) {
+      display: none;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: $base-color;
+  }
+}

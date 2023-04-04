@@ -1,4 +1,5 @@
 @import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
 
 .footer {
   padding: 50px 0;
@@ -6,10 +7,20 @@
   background: #ebf4ef;
 
   &__wrapper {
+    @include response(phone) {
+      text-align: center;
+    }
+  }
+
+  &__animation {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 100px;
+
+    @include response(phone) {
+      gap: 60px;
+    }
   }
 
   &__title {
@@ -23,6 +34,11 @@
     justify-content: center;
     gap: 100px;
     width: 100%;
+
+    @include response(phone) {
+      flex-direction: column;
+      gap: 30px;
+    }
   }
 
   &__contacts {
@@ -35,7 +51,7 @@
     list-style: none;
   }
 
-  &__navLink{
+  &__navLink {
     font-size: 20px;
     line-height: 30px;
     color: $base-color;
@@ -61,6 +77,11 @@
   &__copyright {
     display: flex;
     gap: 50px;
+
+    @include response(phone) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
   &__copyrightItem {
