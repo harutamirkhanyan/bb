@@ -90,6 +90,7 @@
   }
 
   &__imgWrapper {
+    overflow: hidden;
     width: 100%;
     height: fit-content;
     max-width: 800px;
