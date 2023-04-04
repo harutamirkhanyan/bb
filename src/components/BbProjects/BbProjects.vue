@@ -1,13 +1,13 @@
 <template lang="pug">
 ul.projects
   li.projects__item(v-for="item in projects" :key="item.id" )
-    .projects__imgWrapper(  v-motion-slide-visible-right
+    .projects__imgWrapper(  v-motion-slide-visible-top
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
       :delay="100")
       img.projects__img(:src='item.img' alt='alt' loading='lazy')  
-    .projects__content(  v-motion-slide-visible-left
+    .projects__content(   v-motion-pop-visible
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
       :hovered="{ scale: 1 }"
