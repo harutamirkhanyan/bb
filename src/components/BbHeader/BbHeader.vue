@@ -9,7 +9,7 @@
         a.header__contact.header__contact--displayNone(href='mailto:info@bhb-bayern.de')
           img.header__contactImg(:src='sendMail' loading='lazy' alt='sendMail')
           span.header__contactText  info@bhb-bayern.de
-      .header__logoWrapper
+      router-link.header__logoWrapper(to='/')
         img.header__logo(:src='logo' loading='lazy' alt='logo')
       .header__socialMedia
         a.header__logoWrapper.header__logoWrapper--mini(href='info@bhb-bayern.de')
@@ -20,7 +20,7 @@
         img.header__logo(:src='burger' loading='lazy' alt='burgerLogo')
     ul.header__menu
       li.header__item(v-for="item in navItem" :key="item.id")
-        a.header__link(href='javascript:void(0)') {{item.text}}
+        router-link.header__link(:to='item.route') {{item.text}}
     BbSidebar.header__sidebar.sidebar
       .sidebar__info
         a.sidebar__contact(href='tel:+49 89 64 19 280') 
@@ -31,7 +31,7 @@
           span.sidebar__contactText  info@bhb-bayern.de
       ul.sidebar__menu
         li.sidebar__item(v-for="item in navItem" :key="item.id")
-          a.sidebar__link(href='javascript:void(0)') {{item.text}}
+          router-link.header__link(:to='item.route') {{item.text}}
         li.sidebar__item
           .sidebar__socialMedia
             a.sidebar__logoWrapper.sidebar__logoWrapper--mini(href='info@bhb-bayern.de')
@@ -55,11 +55,11 @@ export default {
   components: {BbSidebar},
   setup() {
     const navItem = ref([
-      { id: 1, text: 'Projekte' },
-      { id: 2, text: 'Maison' },
-      { id: 3, text: 'Presse' },
-      { id: 4, text: 'Magazin' },
-      { id: 5, text: 'Kontakt' },
+      { id: 1, text: 'Projekte',route: 'projects' },
+      { id: 2, text: 'Maison',route: 'maison' },
+      { id: 3, text: 'Presse',route: 'presse' },
+      { id: 4, text: 'Magazin',route: 'store' },
+      { id: 5, text: 'Kontakt',route: 'contacts' },
     ]);
     const store = useStore();
     return {
