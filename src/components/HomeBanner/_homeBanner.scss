@@ -20,10 +20,9 @@
     transform: scaleX(-1);
   }
 
-  &__wrapper{
+  &__wrapper {
     padding: 0 0 0 50px;
   }
-
 
   &__titleBlock {
     position: absolute;
@@ -33,16 +32,28 @@
     align-items: flex-start;
     width: 100%;
     padding: 0 50px 0 0;
+    gap: 35px; 
 
     @include response(tablet) {
       top: -100px;
+      flex-direction: column;
+    }
+
+    @include response(phone) {
+      top: -75px;
     }
   }
 
   &__title {
-    font-size: 100px;
+    max-width: 305px;
+    font-size: 110px;
     color: white;
     font-weight: 700;
+    word-wrap: break-word;
+
+    @include response(tablet) {
+      font-size: 60px;
+    }
 
     @include response(phone) {
       font-size: 30px;
@@ -50,8 +61,8 @@
   }
 
   &__description {
-    padding-top: 25px;
-    font-size: 15px;
+    padding: 25px 0;
+    font-size: 20px;
     color: white;
   }
 
@@ -64,9 +75,13 @@
     right: -120px;
     transform: rotate(180deg);
     letter-spacing: 4px;
+    text-align: center;
 
     @include response(tablet) {
-      right: -30px;
+      right: -60px;
+      top: -50px;
+      height: 350px;
+      word-wrap: break-word;
     }
   }
 
@@ -77,7 +92,21 @@
     text-align: right;
 
     @include response(tablet) {
-      right: -30px;
+      right: 0;
+    }
+  }
+
+  &__titleBottom{
+    font-size: 100px;
+    color: white;
+    font-weight: 700;
+
+    @include response(tablet) {
+      font-size: 60px;
+    }
+
+    @include response(phone) {
+      font-size: 30px;
     }
   }
 
@@ -87,7 +116,8 @@
   }
 
   @include response(tablet) {
-    border-right: 50px solid $base-color;
+    border-right: 70px solid $base-color;
     border-top: 100px solid $base-color;
+    height: 500px;
   }
 }

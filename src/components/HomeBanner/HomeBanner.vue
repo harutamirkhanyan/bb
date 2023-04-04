@@ -6,7 +6,7 @@
       span.homeBanner__description(v-html='description')
     span.homeBanner__vertical {{verticalTExt}}
     .homeBanner__bottomBlock
-      h2.homeBanner__title
+      h2.homeBanner__titleBottom
         div.homeBanner__ingo
           p.homeBanner__name
             span Sinn
@@ -20,7 +20,7 @@ import logo from '@/assets/img/homeBannerLogo.png';
 export default {
   name: 'BbHeader',
   setup() {
-    const title = ref('Archi <br> tektur <br> mit');
+    const title = ref('Architektur mit');
     const description = ref(
       'Architektur, Bauerherr & Projektentwickler für visionäre Immobilien in und um München. <br> Geschaffen für das Wohnen und Arbeiten im Morgen.'
     );

@@ -36,6 +36,10 @@
     bottom: 50px;
     width: 100%;
     padding: 0 50px;
+
+    @include response(phone) {
+      padding: 0 20px;
+    }
   }
 
   &__title {
@@ -48,7 +52,8 @@
     z-index: 1;
 
     @include response(phone) {
-      font-size: 30px;
+      top: 30px;
+      font-size: 35px;
     }
   }
 
@@ -59,6 +64,10 @@
 
     @include response(tablet) {
       max-width: 45%;
+    }
+
+    @include response(phone) {
+      max-width: 100%;
     }
   }
 
@@ -76,6 +85,10 @@
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     margin-bottom: 25px;
+
+    @include response(phone) {
+      width: 100%;
+    }
   }
 
   &__mailInput {
@@ -99,6 +112,10 @@
       -webkit-text-fill-color: #ffffffbd !important;
       background-color: transparent !important;
     }
+
+    @include response(phone) {
+      max-width: 50%;
+    }
   }
 
   &__submitWrapper {
@@ -110,6 +127,11 @@
     left: 50%;
     white-space: nowrap;
     padding: 10px;
+
+    @include response(phone) {
+      left: auto;
+      font-size: 10px;
+    }
   }
 
   &__checkboxInput {

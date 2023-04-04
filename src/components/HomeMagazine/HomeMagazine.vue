@@ -1,6 +1,6 @@
 <template lang="pug">
 .homeMagazine.container
-  TitleBlock(title='title' text='projectText' linkText='linkText')
+  TitleBlock(:title='projectTitle' :text='projectText' :linkText='linkText')
   .homeMagazine__wrapper
     .homeMagazine__card.homeMagazine__card--one
       .homeMagazine__imgWrapper(  v-motion-slide-visible-left
@@ -85,6 +85,11 @@ export default {
   },
 
   setup() {
+    const linkText = ref('ZUR ÜBERSICHT');
+    const projectText = ref(
+      'Wir denken das Wohnen und Bauen der Zukunft voraus und präsentieren Ihnen Zeitgeist und Visionen, Lifestyle und Design, Architektur und Baukultur. Gesammelt an dieser Stelle.'
+    );
+    const projectTitle = ref('Magazin');
     const title = ref('Aenean commodo ligula eget dolor.');
     const text =
       'Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes.';
@@ -129,6 +134,9 @@ export default {
       magazineFive,
       title,
       text,
+      projectText,
+      projectTitle,
+      linkText
     };
   },
 };

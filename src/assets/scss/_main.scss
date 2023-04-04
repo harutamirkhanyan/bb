@@ -16,7 +16,11 @@
   margin: 0 auto;
   max-width: 1920px;
   padding: 0 50px;
-  // overflow: hidden;
+  overflow: hidden;
+
+  @include response(phone) {
+   padding: 25px;
+  }
 }
 
 a {
