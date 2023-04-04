@@ -106,6 +106,13 @@
       font-size: 20px;
     }
 
+    &::-webkit-input-placeholder {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      font-size: 20px;
+    }
+
     &:-internal-autofill-selected {
       -webkit-box-shadow: 0 0 0 30px $base-color inset !important;
       -webkit-text-fill-color: #ffffffbd !important;
