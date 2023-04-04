@@ -100,23 +100,22 @@
     color: white;
 
     &::placeholder {
-      position: absolute;
-      width: 100%;
-      min-height: 100%;
       font-size: 20px;
-    }
-
-    &::-webkit-input-placeholder {
-      position: absolute;
-      width: 100%;
-      min-height: 100%;
-      font-size: 20px;
+      @include response(phone) {
+        font-size: 14px;
+      }
     }
 
     &:-internal-autofill-selected {
       -webkit-box-shadow: 0 0 0 30px $base-color inset !important;
       -webkit-text-fill-color: #ffffffbd !important;
       background-color: transparent !important;
+    }
+
+    input::-webkit-input-placeholder {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
     }
 
     @include response(phone) {
@@ -140,6 +139,10 @@
     }
   }
 
+  &__checkbox{
+    font-size: 14px;
+  }
+
   &__checkboxInput {
     background-color: transparent;
     border: 1px solid #9a3030;
@@ -151,25 +154,25 @@
   &__checkboxLabel {
     color: white;
   }
-}
 
-input[type='checkbox'] {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  /* остальные стили рамки */
-}
+  input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    /* остальные стили рамки */
+  }
 
-input[type='checkbox'] + label:before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #ccc;
-  vertical-align: middle;
-  margin-right: 10px;
-}
+  input[type='checkbox'] + label:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
 
-input[type='checkbox']:checked + label:before {
-  background-color: #4000ff;
+  input[type='checkbox']:checked + label:before {
+    background-color: #4000ff;
+  }
 }

@@ -24,6 +24,7 @@
   }
 
   &__imgWrapper {
+    overflow: hidden;
     display: inline-flex;
     min-width: 65%;
     height: fit-content;
