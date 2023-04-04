@@ -16,7 +16,7 @@
           img.header__logo(:src='facebook' loading='lazy' alt='facebook')
         a.header__logoWrapper.header__logoWrapper--mini(href='info@bhb-bayern.de') 
           img.header__logo(:src='instagram' loading='lazy' alt='instagram')
-      a.header__burger(@click.prevent="openSidebar")
+      a.header__burger(href="javascript:void(0)" @click.prevent="openSidebar")
         img.header__logo(:src='burger' loading='lazy' alt='burgerLogo')
     ul.header__menu
       li.header__item(v-for="item in navItem" :key="item.id")
