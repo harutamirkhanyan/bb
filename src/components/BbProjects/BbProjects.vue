@@ -1,11 +1,12 @@
 <template lang="pug">
 ul.projects
-  li.projects__item(v-for="item in projects" :key="item.id" )
-    .projects__imgWrapper
-      img.projects__img(:src='item.img' alt='alt' loading='lazy' v-motion-slide-visible-top
+  li.projects__item(v-for="(item, index) in projects" :key="item.img")
+    .projects__imgWrapper()
+      img.projects__img(v-if="loadedImages[index]" :src='item.img' alt='alt' loading='lazy' v-motion-slide-visible-top
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 1 } }"
-      :delay="100")  
+      :delay="100")
+      .projects__loading(v-else ) Loading...
     .projects__content(v-motion-pop-visible
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"
@@ -17,13 +18,32 @@ ul.projects
 </template>
 
 <script>
+import { reactive, onMounted } from 'vue';
+
 export default {
   name: 'BbProjects',
   props: {
     projects: {
-      tye: Array,
+      type: Array,
       required: true,
     },
+  },
+  setup(props) {
+    const loadedImages = reactive(new Array(props.projects.length).fill(false));
+
+    onMounted(() => {
+      props.projects.forEach((project, index) => {
+        const img = new Image();
+        img.src = project.img;
+        img.onload = () => {
+          loadedImages[index] = true;
+        };
+      });
+    });
+
+    return {
+      loadedImages,
+    };
   },
 };
 </script>

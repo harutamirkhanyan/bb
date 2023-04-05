@@ -78,6 +78,8 @@ export default {
       },
     ]);
 
+    
+
     return {
       verticalText,
       projects,
