@@ -38,27 +38,27 @@ export default {
       {
         id: 1,
         text: 'Projekte',
-        url: '',
+        route: 'projects',
       },
       {
-        id: 1,
+        id: 2,
         text: 'Maison',
-        url: '',
+        route: 'maison',
       },
       {
-        id: 1,
+        id: 3,
         text: 'Presse',
-        url: '',
+        route: 'presse',
       },
       {
-        id: 1,
+        id: 4,
         text: 'Magazine',
-        url: '',
+        route: 'store',
       },
       {
-        id: 1,
+        id: 5,
         text: 'Kontakt',
-        url: '',
+        route: 'contacts',
       },
     ]);
     return {

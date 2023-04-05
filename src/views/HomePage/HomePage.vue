@@ -1,6 +1,5 @@
 <template lang="pug">
 .homePage
-  BbHeader
   HomeBanner
   HomeVision
   .homePage__projectsBg
@@ -9,20 +8,17 @@
         TitleBlock(:title='title' :text='projectText' :linkText='linkText')
         BbProjects(:projects='projects')
   HomeMagazine(:cardInfo='magazineItems')
-  HomeNewsLetter
-  BbFooter 
+  HomeNewsLetter 
 </template>
 
 <script>
 import { ref } from 'vue';
-import BbHeader from '@/components/BbHeader/BbHeader.vue';
 import HomeBanner from '@/components/HomeBanner/HomeBanner.vue';
 import HomeVision from '@/components/HomeVision/HomeVision.vue';
 import BbProjects from '@/components/BbProjects/BbProjects.vue';
 import TitleBlock from '@/components/TitleBlock/TitleBlock.vue';
 import HomeMagazine from '@/components/HomeMagazine/HomeMagazine.vue';
 import HomeNewsLetter from '@/components/HomeNewsLetter/HomeNewsLetter.vue';
-import BbFooter from '@/components/BbFooter/BbFooter.vue';
 import projectOne from '@/assets/img/projectOne.jpg';
 import projectTwo from '@/assets/img/projectTwo.jpg';
 import projectThree from '@/assets/img/projectThree.jpg';
@@ -35,29 +31,29 @@ import magazineFive from '@/assets/img/magazineFive.jpg';
 
 export default {
   name: 'BbHomePage',
-  components: { BbHeader, HomeBanner, HomeVision, BbProjects, TitleBlock, HomeMagazine, HomeNewsLetter, BbFooter },
+  components: {  HomeBanner, HomeVision, BbProjects, TitleBlock, HomeMagazine, HomeNewsLetter },
   setup() {
     const projects = ref([
       {
         id: 1,
         img: projectOne,
-        name: 'MÜNCHEN-HAAR',
+        geo: 'MÜNCHEN-HAAR',
         title: 'TAUSENDSCHÖN',
-        url: 'MEHR ERFAHREN',
+        more: 'MEHR ERFAHREN',
       },
       {
         id: 2,
         img: projectTwo,
-        name: 'MÜNCHEN-GRAFING',
+        geo: 'MÜNCHEN-GRAFING',
         title: 'S’PLATZL',
-        url: 'MEHR ERFAHREN',
+        more: 'MEHR ERFAHREN',
       },
       {
         id: 3,
         img: projectThree,
-        name: 'MÜNCHEN-HAAR',
+        geo: 'MÜNCHEN-HAAR',
         title: 'MÜNCHEN-GARCHING',
-        url: 'MEHR ERFAHREN',
+        more: 'MEHR ERFAHREN',
       },
     ]);
     const projectText = ref(
