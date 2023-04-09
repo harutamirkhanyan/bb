@@ -1,0 +1,60 @@
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
+
+.projectsPage{
+  position: relative;
+  border-top: 1px solid #927676;
+  padding: 100px 75px 50px;
+  background: url('@/assets/img/projectBg.jpg') no-repeat;
+  background-size: 100% 100%;
+
+  &__title{
+    font-size: 120px;
+    color: $base-color;
+    text-transform: uppercase;
+    max-width: 550px;
+
+    @include response(tablet) {
+      font-size: 60px;
+    }
+
+    @include response(phone) {
+      font-size: 30px;
+      text-align: center;
+      max-width: unset;
+    }
+  }
+
+  &__text{
+    font-size: 20px;
+    color: $base-color;
+    text-transform: uppercase;
+    padding: 15px 0;
+
+    @include response(phone) {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &__verticalText{
+    position: absolute;
+    font-size: 16px;
+    color: $base-color;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    right: 30px;
+    transform: rotate(180deg);
+    letter-spacing: 4px;
+    text-align: center;
+
+    @include response(phone) {
+      font-size: 14px;
+      right: 7px;
+    }
+  }
+
+  @include response(phone) {
+    padding: 70px 30px 20px;
+  }
+}
