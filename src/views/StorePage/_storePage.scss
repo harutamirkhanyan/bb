@@ -1,0 +1,53 @@
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
+
+.store {
+  position: relative;
+  padding: 50px 0;
+  width: 100%;
+  background: #ebf4ef;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 260px;
+    color: #0f4533;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $base-color;
+    color: #0f4533;
+    text-align: center;
+    max-width: 800px;
+    padding: 15px 0;
+
+    @include response(phone) {
+      font-size: 15px;
+      text-align: center;
+    }
+  }
+
+  &__verticalText{
+    position: absolute;
+    font-size: 16px;
+    color: $base-color;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    top: 350px;
+    right: 30px;
+    transform: rotate(180deg);
+    letter-spacing: 4px;
+    text-align: center;
+
+    @include response(phone) {
+      font-size: 14px;
+      right: 7px;
+    }
+  }
+}

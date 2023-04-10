@@ -4,7 +4,7 @@
 .projectsPage{
   position: relative;
   border-top: 1px solid #927676;
-  padding: 100px 75px 50px;
+  padding: 100px 0 50px;
   background: url('@/assets/img/projectBg.jpg') no-repeat;
   background-size: 100% 100%;
 
@@ -55,6 +55,6 @@
   }
 
   @include response(phone) {
-    padding: 70px 30px 20px;
+    padding: 70px 0 20px;
   }
 }

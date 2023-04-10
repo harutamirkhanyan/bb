@@ -52,7 +52,7 @@ export default {
       },
       {
         id: 4,
-        text: 'Magazine',
+        text: 'Store',
         route: 'store',
       },
       {
