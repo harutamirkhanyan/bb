@@ -1,11 +1,11 @@
 <template lang="pug">
 .projectsPage
-  h2.projectsPage__title Baukultur seit 1976
-  p.projectsPage__text Unsere Projecte
-  span.projectsPage__verticalText {{verticalText}}
-  .projectsPage__wrapper
-    BbProjects(:projects='projects')
-    
+  .projectsPage__container.container
+    h2.projectsPage__title Baukultur seit 1976
+    p.projectsPage__text Unsere Projecte
+    span.projectsPage__verticalText {{verticalText}}
+    .projectsPage__wrapper
+      BbProjects(:projects='projects')
 </template>
 
 <script>

@@ -12,15 +12,15 @@ export default {
 
   props: {
     title: {
-      tye: String,
+      type: String,
       required: true,
     },
     text: {
-      tye: String,
+      type: String,
       required: true,
     },
     linkText: {
-      tye: String,
+      type: String,
       required: true,
     },
   },

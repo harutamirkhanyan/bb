@@ -1,29 +1,13 @@
 <template lang="pug">
 .sidebar(v-if="sidebar")
-  span.sidebar__close(@click="closeSidebar") &times;
+  //- span.sidebar__close(@click="closeSidebar") &times;
   .sidebar__content
     slot
-  //- .sidebar__content
-    .sidebar__info
-      a.sidebar__contact(href='tel:+49 89 64 19 280') 
-        img.sidebar__contactImg(:src='bbPhone' loading='lazy' alt='bbPhone')
-        span.sidebar__contactText +49 89 64 19 280
-      a.sidebar__contact(href='mailto:info@bhb-bayern.de')
-        img.sidebar__contactImg(:src='sendMail' loading='lazy' alt='sendMail')
-        span.sidebar__contactText  info@bhb-bayern.de
-    ul.sidebar__menu
-      li.sidebar__item(v-for="item in navItem" :key="item.id")
-        a.sidebar__link(href='javascript:void(0)') {{item.text}}
-      li.sidebar__item
-        .sidebar__socialMedia
-          a.sidebar__logoWrapper.sidebar__logoWrapper--mini(href='info@bhb-bayern.de')
-            img.sidebar__logo(:src='facebook' loading='lazy' alt='facebook')
-          a.sidebar__logoWrapper.sidebar__logoWrapper--mini(href='info@bhb-bayern.de') 
-            img.sidebar__logo(:src='instagram' loading='lazy' alt='instagram')
+
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
+import { computed, onMounted, onUnmounted } from '@vue/runtime-core';
 import { useStore } from 'vuex';
 import bbPhone from '@/assets/svgs/bbPhone.svg';
 import sendMail from '@/assets/svgs/sendMail.svg';
@@ -33,13 +17,39 @@ export default {
   setup() {
     const store = useStore();
     const sidebar = computed(() => store.state.sidebar);
+    const closeSidebar = () => store.commit('closeSidebar');
+
+
+    const handleOutsideClick = (event) => {
+      const sidebarEl = document.querySelector('.sidebar');
+      const openButton = document.querySelector('.header__burger');
+
+      if (
+        sidebar.value &&
+        sidebarEl &&
+        !sidebarEl.contains(event.target) &&
+        openButton &&
+        !openButton.contains(event.target)
+      ) {
+        closeSidebar();
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener('click', handleOutsideClick);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('click', handleOutsideClick);
+    });
+
     return {
       sidebar,
       bbPhone,
       sendMail,
       facebook,
       instagram,
-      closeSidebar: () => store.commit('closeSidebar'),
+      closeSidebar,
     };
   },
 };

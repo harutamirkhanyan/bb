@@ -1,0 +1,96 @@
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
+
+.recommendedContent {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 150px;
+    margin: 50px 0 150px 0;
+  }
+
+  &__text {
+    display: flex;
+    align-items: flex-start;
+    max-width: 450px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-end;
+    max-width: 450px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  
+
+    @include response(tablet) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    list-style: none;
+    max-width: 30%;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-120px);
+    }
+
+    @include response(tablet) {
+      max-width: 100%;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__imgWrapper {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    max-width: 450px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__textsBlock {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  &__name {
+    font-size: 20px;
+    color: white;
+  }
+
+  &__itemTitle {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+  }
+
+  &__more {
+    font-size: 20px;
+    color: white;
+  }
+}
