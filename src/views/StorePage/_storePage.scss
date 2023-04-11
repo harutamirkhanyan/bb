@@ -2,12 +2,14 @@
 @import '@/assets/scss/mixin';
 
 .store {
-  position: relative;
-  padding: 50px 0;
-  width: 100%;
-  background: #ebf4ef;
-
   &__wrapper {
+    position: relative;
+    padding: 50px 0;
+    width: 100%;
+    background: #ebf4ef;
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +35,7 @@
     }
   }
 
-  &__verticalText{
+  &__verticalText {
     position: absolute;
     font-size: 16px;
     color: $base-color;
@@ -60,7 +62,7 @@
       align-items: flex-end;
     }
 
-    &--reverse{
+    &--reverse {
       flex-direction: row-reverse;
     }
 
@@ -107,7 +109,7 @@
 
     &--two {
       max-width: 70%;
-      
+
       @include response(phone) {
         max-width: 100%;
       }
