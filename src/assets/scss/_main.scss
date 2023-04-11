@@ -20,7 +20,7 @@
   overflow: hidden;
 
   @include response(phone) {
-    padding: 25px;
+    padding: 0 25px;
   }
 }
 

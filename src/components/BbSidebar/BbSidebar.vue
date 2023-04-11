@@ -1,6 +1,6 @@
 <template lang="pug">
 .sidebar(v-if="sidebar")
-  span.sidebar__close(@click="closeSidebar") &times;
+  //- span.sidebar__close(@click="closeSidebar") &times;
   .sidebar__content
     slot
 

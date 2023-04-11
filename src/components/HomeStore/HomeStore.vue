@@ -2,19 +2,23 @@
 .homeStore.container
   TitleBlock(:title='projectTitle' :text='projectText' :linkText='linkText')
   .homeStore__wrapper
-    .homeStore__card.homeStore__card--one
+    .homeStore__card.homeStore__card--one(v-if="storeItems[0]")
       StoreCard(v-bind="storeItems[0]" animationDirection="left")
     .homeStore__cardWrapper
-      .homeStore__card.homeStore__card--two
+      .homeStore__card.homeStore__card--two(v-if="storeItems[1]")
         StoreCard(v-bind="storeItems[1]" animationDirection="right")
-      .homeStore__card.homeStore__card--three
+      .homeStore__card.homeStore__card--three(v-if="storeItems[2]")
         StoreCard(v-bind="storeItems[2]" animationDirection="right")
   .homeStore__wrapper.homeStore__wrapper--two
-    .homeStore__card.homeStore__card--four
+    .homeStore__card.homeStore__card--four(v-if="storeItems[3]")
       StoreCard(v-bind="storeItems[3]" animationDirection="right")
-    .homeStore__card.homeStore__card--five
+    .homeStore__card.homeStore__card--five(v-if="storeItems[4]")
       StoreCard(v-bind="storeItems[4]" animationDirection="left")
+  //- .homeStore__card(v-for="(card, index) in storeItems.slice(5)" :key="`${index}`" :class="`homeStore__card--extra`")
+  //-   StoreCard(v-if='(index%2===0)' v-bind="card" animationDirection="right" :class="`homeStore__cardItem homeStore__cardItem--right`")
+  //-   StoreCard(v-else v-bind="card" animationDirection="left" :class="`homeStore__cardItem homeStore__cardItem--left`")
 </template>
+
 
 <script>
 import { ref } from 'vue';
@@ -76,6 +80,12 @@ export default {
         src: storeFive,
       },
     ]);
+
+    storeItems.value[0].animationDirection = 'left';
+    storeItems.value[1].animationDirection = 'right';
+    storeItems.value[2].animationDirection = 'right';
+    storeItems.value[3].animationDirection = 'right';
+    storeItems.value[4].animationDirection = 'left';
     return {
       storeItems,
       storeOne,
