@@ -1,21 +1,8 @@
 <template lang="pug">
 .storeCard
-  .storeCard__imgWrapper(v-if="animationDirection == 'left'")
-    img.storeCard__img(
-      :src='src' alt='alt' loading='lazy'  
-      v-motion-slide-visible-right
-      :enter="{ opacity: 1, y: 0, scale: 1 }"
-      :variants="{ custom: { scale: 2 } }"
-      :hovered="{ scale: 1 }"
-      :delay="100")
-  .storeCard__imgWrapper(v-else-if="animationDirection == 'right'")
-    img.storeCard__img(
-      :src='src' alt='alt' loading='lazy'  
-       v-motion-slide-visible-left
-      :enter="{ opacity: 1, y: 0, scale: 1 }"
-      :variants="{ custom: { scale: 2 } }"
-      :hovered="{ scale: 1 }"
-      :delay="100")
+  .storeCard__imgWrapper
+    VMotionWrapper(:animationType='animationType')
+      img.storeCard__img(:src='src' alt='alt' loading='lazy')
   .storeCard__descriptionBlock
     .storeCard__textBlock
       h3.storeCard__cardTitle {{title}}
@@ -25,9 +12,11 @@
 
 <script>
 import arrowStore from '@/assets/svgs/arrowStore.svg';
+import VMotionWrapper from '@/components/VMotionWrapper/VMotionWrapper.vue';
 
 export default {
   name: 'StoreCard',
+    components: { VMotionWrapper },
   props: {
     title: {
       type: String,
@@ -41,7 +30,7 @@ export default {
       type: String,
       required: true,
     },
-    animationDirection: {
+    animationType: {
       type: String,
       required: false,
       default: '',
