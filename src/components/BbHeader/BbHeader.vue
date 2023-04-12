@@ -21,7 +21,10 @@
       BurgerMenu.header__burger
     ul.header__menu
       li.header__item(v-for="item in navItem" :key="item.id")
-        router-link.header__link(:to='item.route') {{item.text}}
+        template(v-if="item.hasOwnProperty('route')")
+          router-link.header__link(:to="item.route") {{ item.text }}
+        template(v-else)
+          span {{ item.text }}
     BbSidebar.header__sidebar.sidebarHeader
       template.sidebarHeader__info
         a.sidebarHeader__contact(href='tel:+49 89 64 19 280' @click="closeSidebar") 
@@ -59,9 +62,9 @@ export default {
     const navItem = ref([
       { id: 1, text: 'Projekte', route: 'projects' },
       { id: 2, text: 'Maison', route: 'maison' },
-      { id: 3, text: 'Presse', route: 'presse' },
+      { id: 3, text: 'Presse',  },
       { id: 4, text: 'Magazin', route: 'store' },
-      { id: 5, text: 'Kontakt', route: 'contacts' },
+      { id: 5, text: 'Kontakt',  },
     ]);
     const store = useStore();
 
