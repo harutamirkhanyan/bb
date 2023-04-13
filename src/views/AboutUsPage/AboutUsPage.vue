@@ -1,10 +1,11 @@
 <template lang="pug">
-.maison.containerFluid
-  .maison__wrapper
+.aboutUs.containerFluid
+  .aboutUs__wrapper
     BbNavigation(:title='navigetionTitle' :items='navigetionItems')
-    .maison__content
-      .maison__content
+    .aboutUs__content
+      .aboutUs__content
         AboutUsHeader
+    BbOverview
 
 </template>
 
@@ -12,9 +13,11 @@
 import { ref } from 'vue';
 import BbNavigation from '@/components/BbNavigation/BbNavigation.vue';
 import AboutUsHeader from '@/components/AboutUsHeader/AboutUsHeader.vue';
+import BbOverview from '@/components/BbOverview/BbOverview.vue';
+
 export default {
   name: 'AboutUsPage',
-  components: { BbNavigation, AboutUsHeader },
+  components: { BbNavigation, AboutUsHeader, BbOverview },
   setup() {
     const navigetionTitle = ref('Bauen mit Herzblut – seit 1976');
     const navigetionItems = ref([
