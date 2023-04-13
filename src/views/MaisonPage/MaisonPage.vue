@@ -3,19 +3,20 @@
   .maison__wrapper
     BbNavigation(:title='navigetionTitle' :items='navigetionItems')
     .maison__content
-      .maison__content.container hi
+      .maison__content
+        MaisionHeader
 
 </template>
 
 <script>
 import { ref } from 'vue';
 import BbNavigation from '@/components/BbNavigation/BbNavigation.vue';
-
+import MaisionHeader from '@/components/MaisionHeader/MaisionHeader.vue';
 export default {
   name: 'MaisonPage',
-  components: { BbNavigation },
+  components: { BbNavigation, MaisionHeader },
   setup() {
-    const navigetionTitle= ref('Bauen mit Herzblut – seit 1976');
+    const navigetionTitle = ref('Bauen mit Herzblut – seit 1976');
     const navigetionItems = ref([
       { id: 1, item: 'UNTERNEHMEN' },
       { id: 2, item: 'HALTUNG' },

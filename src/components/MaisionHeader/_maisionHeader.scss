@@ -1,0 +1,80 @@
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
+
+.maisionHeader {
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__leftBlock {
+    position: relative;
+  }
+
+  &__titleTop {
+    position: absolute;
+    z-index: 1;
+    font-size: 100px;
+    top: 85px;
+    right: 80px;
+  }
+
+  &__imgWrapper {
+    margin-top: 150px;
+    width: 100%;
+    height: fit-content;
+    max-width: 800px;
+    transform: scaleX(-1);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__imgWrapperRight {
+    margin: 50px 0 0;
+    width: 100%;
+    height: fit-content;
+    max-width: 600px;
+  }
+
+  &__titleBottom{
+    position: absolute;
+    z-index: 1;
+    font-size: 100px;
+    bottom: 150px;
+    right: 0;
+    max-width: 450px;
+  }
+
+  &__text{
+    position: absolute;
+    bottom: 60px;
+    max-width: 350px;
+    transform: translateX(50%);
+    left: 50%;
+  }
+
+  &__verticalText {
+    position: absolute;
+    font-size: 16px;
+    color: $base-color;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    top: 10px;
+    right: 15px;
+    transform: rotate(180deg);
+    letter-spacing: 4px;
+    text-align: center;
+
+    @include response(phone) {
+      font-size: 14px;
+      right: 7px;
+    }
+  }
+}
