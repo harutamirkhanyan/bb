@@ -61,7 +61,7 @@ export default {
   setup() {
     const navItem = ref([
       { id: 1, text: 'Projekte', route: 'projects' },
-      { id: 2, text: 'Maison', route: 'maison' },
+      { id: 2, text: 'Maison', route: 'about' },
       { id: 3, text: 'Presse',  },
       { id: 4, text: 'Magazin', route: 'store' },
       { id: 5, text: 'Kontakt',  },

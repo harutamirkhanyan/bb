@@ -1,21 +1,25 @@
 <template lang="pug">
-.maison.containerFluid
-  .maison__wrapper
+.aboutUs.containerFluid
+  .aboutUs__wrapper
     BbNavigation(:title='navigetionTitle' :items='navigetionItems')
-    .maison__content
-      .maison__content.container hi
+    .aboutUs__content
+      .aboutUs__content
+        AboutUsHeader
+    BbOverview
 
 </template>
 
 <script>
 import { ref } from 'vue';
 import BbNavigation from '@/components/BbNavigation/BbNavigation.vue';
+import AboutUsHeader from '@/components/AboutUsHeader/AboutUsHeader.vue';
+import BbOverview from '@/components/BbOverview/BbOverview.vue';
 
 export default {
-  name: 'MaisonPage',
-  components: { BbNavigation },
+  name: 'AboutUsPage',
+  components: { BbNavigation, AboutUsHeader, BbOverview },
   setup() {
-    const navigetionTitle= ref('Bauen mit Herzblut – seit 1976');
+    const navigetionTitle = ref('Bauen mit Herzblut – seit 1976');
     const navigetionItems = ref([
       { id: 1, item: 'UNTERNEHMEN' },
       { id: 2, item: 'HALTUNG' },
@@ -31,4 +35,4 @@ export default {
 };
 </script>
 
-<style src="./_maisonPage.scss" lang="scss"></style>
+<style src="./_aboutUsPage.scss" lang="scss"></style>

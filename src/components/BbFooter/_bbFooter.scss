@@ -6,7 +6,7 @@
   width: 100%;
   background: $base-background;
 
-  &__wrapper {
+  &__container {
     @include response(phone) {
       text-align: center;
     }
