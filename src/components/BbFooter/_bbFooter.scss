@@ -4,9 +4,9 @@
 .footer {
   padding: 50px 0;
   width: 100%;
-  background: #ebf4ef;
+  background: $base-background;
 
-  &__wrapper {
+  &__container {
     @include response(phone) {
       text-align: center;
     }

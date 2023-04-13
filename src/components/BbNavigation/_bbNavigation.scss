@@ -1,0 +1,21 @@
+@import '@/assets/scss/variables';
+@import '@/assets/scss/mixin';
+
+.navigation {
+  display: flex;
+  padding: 25px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $base-color;
+  color: $base-color;
+  
+  &__menu {
+    display: flex;
+    gap: 20px;
+
+  }
+
+  &__item {
+    list-style: none;
+  }
+}

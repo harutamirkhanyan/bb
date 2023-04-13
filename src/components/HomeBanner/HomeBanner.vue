@@ -1,5 +1,5 @@
 <template lang="pug">
-.homeBanner
+.homeBanner.containerFluid
   .homeBanner__wrapper
     .homeBanner__titleBlock
       h1.homeBanner__title(v-html='title')

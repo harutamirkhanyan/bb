@@ -1,6 +1,6 @@
 <template lang="pug">
 footer.footer
-  .footer__wrapper.container
+  .footer__container.container
     .footer__animation(v-motion-slide-visible-bottom
       :enter="{ opacity: 1, y: 0, scale: 1 }"
       :variants="{ custom: { scale: 2 } }"

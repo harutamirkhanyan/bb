@@ -1,5 +1,5 @@
 <template lang="pug">
-.homeNewsLetter
+.homeNewsLetter.containerFluid
   .homeNewsLetter__imgWrapper
     img.homeNewsLetter__img(src='@/assets/img/newsLetter.jpg' alt='newsLetter' loading='lazy')
   .homeNewsLetter__infoBlock
