@@ -1,13 +1,12 @@
 @import '@/assets/scss/variables';
 @import '@/assets/scss/mixin';
 
-.maisionHeader {
-  position: relative;
-
+.aboutUsHeader {
   &__container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    position: relative;
   }
 
   &__leftBlock {

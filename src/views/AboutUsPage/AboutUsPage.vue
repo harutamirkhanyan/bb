@@ -4,17 +4,17 @@
     BbNavigation(:title='navigetionTitle' :items='navigetionItems')
     .maison__content
       .maison__content
-        MaisionHeader
+        AboutUsHeader
 
 </template>
 
 <script>
 import { ref } from 'vue';
 import BbNavigation from '@/components/BbNavigation/BbNavigation.vue';
-import MaisionHeader from '@/components/MaisionHeader/MaisionHeader.vue';
+import AboutUsHeader from '@/components/AboutUsHeader/AboutUsHeader.vue';
 export default {
-  name: 'MaisonPage',
-  components: { BbNavigation, MaisionHeader },
+  name: 'AboutUsPage',
+  components: { BbNavigation, AboutUsHeader },
   setup() {
     const navigetionTitle = ref('Bauen mit Herzblut – seit 1976');
     const navigetionItems = ref([
@@ -32,4 +32,4 @@ export default {
 };
 </script>
 
-<style src="./_maisonPage.scss" lang="scss"></style>
+<style src="./_aboutUsPage.scss" lang="scss"></style>
