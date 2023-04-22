@@ -2,7 +2,7 @@
 ul.projects
   li.projects__item(v-for="(item, index) in projects" :key="item.img")
     .projects__imgWrapper(v-show="loadedImages[index]")
-      VMotionWrapper(animationType='visibleTop')
+      VMotionWrapper(animationType='visibleTop' :animationType='item.animationType')
         img.projects__img(:src='item.img' alt='alt' loading='lazy')
     .loading(v-show="!loadedImages[index]" ) Loading...
     .projects__content(v-motion-pop-visible

@@ -40,13 +40,15 @@ export default {
         geo: 'MÜNCHEN-HAAR',
         title: 'TAUSENDSCHÖN',
         more: 'MEHR ERFAHREN',
+        animationType: 'visibleRight'
       },
       {
         id: 2,
         img: projectTwo,
         geo: 'MÜNCHEN-GRAFING',
         title: 'S’PLATZL',
-        more: 'MEHR ERFAHREN',
+        more: 'MEHR ERFAHREN', 
+        animationType: 'visibleLeft'
       },
       {
         id: 3,
@@ -54,6 +56,7 @@ export default {
         geo: 'MÜNCHEN-HAAR',
         title: 'MÜNCHEN-GARCHING',
         more: 'MEHR ERFAHREN',
+        animationType: 'visibleRight'
       },
     ]);
     const projectText = ref(

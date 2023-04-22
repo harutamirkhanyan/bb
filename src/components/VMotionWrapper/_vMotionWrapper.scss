@@ -1,7 +1,29 @@
-@import '@/assets/scss/variables';
-@import '@/assets/scss/mixin';
+.visibleRight-enter-active {
+  animation: slideInRight 500ms forwards;
+}
 
-.vmWrapper {
-  max-height: 100%;
-  max-width: 100%;
+.visibleTop-enter-active {
+  animation: slideInTop 500ms forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

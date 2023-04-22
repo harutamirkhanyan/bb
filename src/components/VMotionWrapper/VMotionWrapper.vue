@@ -1,37 +1,18 @@
 <template lang="pug">
-template(v-if="animationType === 'visibleRight'")
-  div(v-motion-slide-visible-right
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :variants="{ custom: { scale: 2 } }"
-    :hovered="{ scale: 1 }"
-    :delay="100")
-    <slot></slot>
-template(v-if="animationType === 'visibleLeft'")
-  div(v-motion-slide-visible-left
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :variants="{ custom: { scale: 2 } }"
-    :hovered="{ scale: 1 }"
-    :delay="100")
-    <slot></slot>
-template(v-if="animationType === 'visibleTop'")
-  div(v-motion-slide-visible-top
-    :initial="{opacity: 0, y: 100,}"
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :variants="{ custom: { scale: 1 } }"
-    :delay="100")
-    <slot></slot>
-template(v-if="animationType === 'visibleBottom'")
-  div(v-motion-slide-visible-bottom
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :variants="{ custom: { scale: 2 } }"
-    :hovered="{ scale: 1 }"
-    :delay="50")
-    <slot></slot>
+Transition(:name='animationType')
+  div(ref="obs")
+    slot
+
 </template>
 
 <script>
+import { ref, onMounted, onUnmounted } from 'vue';
+
 export default {
   name: 'VMotionWrapper',
+  //   components: {
+  //   Transition,
+  // },
   props: {
     animationType: {
       type: String,
@@ -39,5 +20,45 @@ export default {
       default: 'visibleRight',
     },
   },
+  setup(_, { attrs }) {
+    const obs = ref(null);
+    const animationType = ref(attrs.animationType);
+
+    const animateElement = () => {
+      obs.value.classList.add(`${animationType.value}-enter-active`);
+      setTimeout(() => {
+        obs.value.classList.remove(`${animationType.value}-enter-active`);
+      }, 500); // Задержка должна соответствовать продолжительности анимации в CSS
+    };
+
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // console.log('Объект в зоне видимости');
+          animateElement(); // Вызовите вашу функцию здесь
+        } else {
+          // console.log('Объект вне зоны видимости');
+        }
+      });
+    };
+
+    onMounted(() => {
+      const observer = new IntersectionObserver(handleIntersect, {
+        threshold: 0.1,
+      });
+      if (obs.value) observer.observe(obs.value);
+
+      onUnmounted(() => {
+        if (obs.value) observer.unobserve(obs.value);
+      });
+    });
+
+    return {
+      obs,
+    };
+  },
 };
+
 </script>
+
+<style src="./_vMotionWrapper.scss" lang="scss"></style>
